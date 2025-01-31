@@ -1,0 +1,15 @@
+function Google()
+{
+    var web= prompt("What is the website :");
+    if (web == "google.com")
+    {
+        console.log("Welcom to google");
+    }
+    if (web != "google.com")
+    {
+        console.log("Invalid website please try again");
+    }
+}
+Google();
+
+//OUTPUT = What is the website : google.com, it will say Welcom to google

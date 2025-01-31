@@ -1,0 +1,7 @@
+function AreaOfHexagon(s)
+{
+    return (3 * Math.sqrt(3) / 2) * s * s;
+}
+console.log(AreaOfHexagon(5));
+
+//OUTPUT = 64.9519052838329

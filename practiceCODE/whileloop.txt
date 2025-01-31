@@ -1,0 +1,32 @@
+var i = 1;
+while (i <= 10)
+{
+    console.log(i)
+    i++;
+}
+//OUTPUT it will print numbers 1 to 10
+--------------------------------------------------------
+var i = 50;
+
+while (i >= 1) { 
+    console.log(i);
+    i--; 
+}
+//OUTPUT it will print numbers 50 to 1
+---------------------------------------------------------
+var i = 0;
+while (i <= 50)
+{
+    console.log(i)
+    i+=5;
+}
+//OUTPUT it will print numbers 1 to 10 multiple by 5
+---------------------------------------------------------
+var i = 50;             // Start at 50
+
+while (i >= 1)          // Loop until num is at least 1
+{ 
+    console.log(i);     // Print the number
+    i -= 5;             // Decrement by 5
+}
+//OUTPUT it will print numbers 50 to 1 multiple by 5

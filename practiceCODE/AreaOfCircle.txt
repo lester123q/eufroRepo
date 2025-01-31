@@ -1,0 +1,10 @@
+function areaOfCircle()
+{
+    var pie=Math.PI;
+    var radius=Math.pow(5,2);
+    var sum=pie*radius;
+    console.log(sum);
+}
+areaOfCircle(); 
+
+//OUTPUT 78.53981633974483

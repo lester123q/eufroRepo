@@ -1,0 +1,7 @@
+var age= prompt("What is you age :")
+if (age != 20)
+{
+    console.log("I\'am " + age + " years old");
+}
+
+//OUTPUT if you put "15" it will say "I'am 15 years old"

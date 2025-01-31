@@ -1,0 +1,28 @@
+function Google()
+{
+    var web= prompt("What is the website :");
+    if (web == "google.com")
+    {
+        console.log("Welcom to google");
+    }
+    else
+    {
+        console.log("Invalid website please try again");
+    }
+}
+Google();
+
+//OUTPUT = What is the website : youtube, it will say Invalid website please try again
+---------------------------------------------------------------------------------------------------------------------------------
+ var age= prompt("What is your age :");
+if (age == 18 || age == 20)
+{
+console.log("My age is :" + age);
+}
+else
+{
+    console.log("INVALID age")
+}
+
+//OUTPUT whether you put 18 or 20 it will say = My age is "what you insert"
+// but if you put neither 18 or 20 it will say INVALID age

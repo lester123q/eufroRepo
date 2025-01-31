@@ -1,0 +1,40 @@
+function Age()
+{
+    var age= prompt("What is your age :");
+    if (age = 18)
+    {
+        console.log("My age is " + age);
+    }
+    else if (age = 20)
+    {
+        console.log("My age is " + age);
+    }
+}
+Age(); 
+
+//OUTPUT whether you put 18 or 20 it will say = My age is "what you insert"
+-----------------------------------------------------------------------------------------------------------------------------------
+ var age= prompt("What is your age :");
+if (age >= 18 && age <= 20)
+{
+    console.log("You can do Bachelor's");
+}
+else if (age >= 21 && age <= 30)
+{
+    console.log("You can do master's");
+}
+else if (age >= 31 && age <= 40)
+{
+    console.log("You can do PHD");
+}
+else if (age >= 41)
+{
+    console.log("You can do whatever you want")
+}
+else
+{
+    console.log("Too young go to school");
+}
+//OUTPUT What is your age : if you put "40" it will say "You can do PHD"
+// if you put lessthan "17" it will say "Too young go to school"
+// if you put greaterthan "41" it will say "You can do whatever you want"

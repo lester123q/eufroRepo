@@ -1,0 +1,19 @@
+function drive()
+{
+var age= prompt("What is your age: ");
+if (age < 18)
+{
+    console.log("You are not allowed to drive");
+}
+if (age > 18 && age <= 30)
+{
+    console.log("You are not allowed to drive");
+}
+ if (age > 30)
+{
+    console.log("You are allowed to drive");
+}
+}
+drive();
+
+//OUTPUT = What is your age: 17 it will say You are not allowed to drive
