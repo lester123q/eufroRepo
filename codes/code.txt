@@ -1,0 +1,4 @@
+for(var i=20; i<=400; i+=20)
+{
+    console.log(i)
+}
