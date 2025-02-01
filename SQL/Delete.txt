@@ -57,23 +57,3 @@ Delete only 1 student with the lowest grade:
 DELETE FROM students
 ORDER BY grade ASC
 LIMIT 1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

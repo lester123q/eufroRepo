@@ -1,0 +1,41 @@
+1. Find Employees with NULL Values
+
+Find employees who have no bonus (NULL bonus):
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+SELECT * FROM employees 
+WHERE bonus IS NULL;
+Output:
+ Bob and David (bonus is NULL).
+=============================================================
+2. Find Employees Who Have a Bonus (NOT NULL)
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+SELECT * FROM employees 
+WHERE bonus IS NOT NULL;
+Output:
+ Alice, Charlie, and Eve.
+=============================================================
+3. Handling NULL with COALESCE() (Replace NULL Values)
+
+Show bonus, but replace NULL with 'No Bonus':
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+SELECT name, COALESCE(bonus, 'No Bonus') AS bonus_status 
+FROM employees;
+
+//Bob and David will show "No Bonus" instead of NULL.
+=============================================================
+4. Using NULL in Calculations (IFNULL() in MySQL, COALESCE() in Standard SQL)
+
+Calculate total pay (salary + bonus) treating NULL as 0:
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+SELECT name, salary + COALESCE(bonus, 0) AS total_pay 
+FROM employees;
+//If bonus is NULL, it is treated as 0 in the calculation.
+=============================================================
+5. Using NULL with Aggregate Functions (COUNT, AVG, etc.)
+
+Find the average bonus (ignores NULL values automatically):
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+SELECT AVG(bonus) AS avg_bonus FROM employees;
+//Only considers non-NULL values.
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+=============================================================

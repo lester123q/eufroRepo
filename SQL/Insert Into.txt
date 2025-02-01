@@ -1,0 +1,49 @@
+1. Insert a Single Record
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+INSERT INTO students (student_id, name, age, grade) 
+VALUES (3, 'Charlie', 18, 'C');
+=============================================================
+2. Insert Multiple Records at Once
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+INSERT INTO students (student_id, name, age, grade) 
+VALUES 
+(4, 'David', 20, 'B'),
+(5, 'Eve', 21, 'A');
+=============================================================
+3. Insert Data Without Specifying Column Names
+
+If you're inserting values for all columns, you can omit column names:
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+INSERT INTO students 
+VALUES (6, 'Frank', 22, 'B');
+=============================================================
+4. Insert Data from Another Table (INSERT INTO SELECT)
+
+If you want to copy data from another table:
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+INSERT INTO students (student_id, name, age, grade)
+SELECT employee_id, employee_name, employee_age, 'B' FROM employees
+WHERE department = 'HR';
+=============================================================
+5. Insert a Record with Auto-Increment (NULL for ID)
+
+If student_id is AUTO_INCREMENT, you don't need to insert it manually:
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+INSERT INTO students (name, age, grade) 
+VALUES ('George', 23, 'C');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

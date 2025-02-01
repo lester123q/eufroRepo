@@ -1,0 +1,29 @@
+1. Find the Cheapest (MIN()) and Most Expensive (MAX()) Product
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+SELECT MIN(price) AS lowest_price, MAX(price) AS highest_price FROM products;
+Output:
+
+lowest_price	highest_price
+50	        800
+=============================================================
+2. Find the Product with the Lowest Price
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+SELECT * FROM products 
+WHERE price = (SELECT MIN(price) FROM products);
+Output:
+ Keyboard - $50
+=============================================================
+3. Find the Product with the Highest Stock
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+SELECT * FROM products 
+WHERE stock = (SELECT MAX(stock) FROM products);
+Output:
+ Keyboard - 200 in stock
+=============================================================
+4. Find MIN() and MAX() for Each Category (GROUP BY Example)
+
+If products have categories:
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+SELECT category, MIN(price) AS cheapest, MAX(price) AS expensive 
+FROM products 
+GROUP BY category;
