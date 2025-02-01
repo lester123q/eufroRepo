@@ -1,0 +1,25 @@
+1, Count total orders:
+
+SELECT COUNT(*) AS total_orders FROM orders;
+============================================
+2, Sum of all order amounts:
+
+SELECT SUM(amount) AS total_amount FROM orders;
+===============================================
+3, Average order amount:
+
+SELECT AVG(amount) AS avg_amount FROM orders;
+=============================================
+4, Minumun order amount:
+
+SELECT MIN(amount) AS min_amount FROM orders;
+=============================================
+5, Maximum order amount:
+
+SELECT MAX(amount) AS max_amount FROM orders;
+=============================================
+6, Total amount spent by each customer (GROUP BY example):
+
+SELECT customer_id, SUM(amount) AS total_spent 
+FROM orders 
+GROUP BY customer_id;

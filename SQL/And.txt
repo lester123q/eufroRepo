@@ -1,0 +1,4 @@
+Find employees from the IT department who have a salary greater than 65000:
+
+SELECT * FROM employees
+WHERE department = 'IT' AND salary > 65000;

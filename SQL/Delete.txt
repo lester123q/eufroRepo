@@ -1,0 +1,79 @@
+1. Delete a specific row
+
+Delete the student named 'Charlie':
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+DELETE FROM students 
+WHERE name = 'Charlie';
+//Result: The row with Charlie is removed.
+=========================================
+2. Delete rows based on a condition
+
+Delete students older than 18:
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+DELETE FROM students 
+WHERE age > 18;
+//Result: Bob and David are removed.
+===================================
+3. Delete all rows from the table (BE CAREFUL!)
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+DELETE FROM students;
+//Result: The table is now empty, but the structure remains.
+===========================================================
+4. Delete all rows AND reset auto-increment (MySQL-specific)
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+TRUNCATE TABLE students;
+//Result: Same as DELETE FROM students;, but it resets the AUTO_INCREMENT counter.
+===========================================================
+Safe Deletions, Using JOIN, and LIMIT in SQL DELETE
+
+1. Safe Deletion Using Transactions (Rollback if needed)
+
+Example: Delete students older than 18 but rollback if needed (only in databases that support transactions, like MySQL and PostgreSQL).
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+START TRANSACTION;
+
+DELETE FROM students 
+WHERE age > 18;
+
+-- If everything looks good, commit the changes
+COMMIT;
+
+-- If something goes wrong, rollback instead
+-- ROLLBACK; 
+//Rollback prevents accidental deletions.
+============================================================
+2. Delete With JOIN (Delete Based on Another Table's Data)
+
+Delete students who are in the suspended_students table:
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+DELETE s 
+FROM students s
+JOIN suspended_students ss ON s.student_id = ss.student_id;
+=============================================================
+3. Use LIMIT to Delete a Few Records Only
+
+Delete only 1 student with the lowest grade:
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+DELETE FROM students
+ORDER BY grade ASC
+LIMIT 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
